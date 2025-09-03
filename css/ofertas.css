@@ -1,0 +1,58 @@
+.ofertas{
+  display: flex; /*Alinea las ofertas mediante un flexbox*/
+  justify-content: left; /*justifica la imagen dandole un lugar*/
+  align-items: center;
+}
+
+.Oferta.Monitor{
+  position: relative; /*posiciona el contenido por encima de la imag*/
+  display: block; /*hace que el enlace use todo el espacio de la tarjeta*/
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  max-width: 400px;
+  margin: 20px
+}
+
+.Oferta.Monitor img{
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.Oferta.Monitor:hover img{
+  transform: scale(1.05);
+}
+
+.carta-de-contenido {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.7);
+}
+
+.carta-de-contenido h2{
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.valor{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #6a0dad;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.valor p{
+  margin:0;
+  font-size: 1.2em;
+  font-weight: bold;
+  
+}

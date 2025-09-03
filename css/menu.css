@@ -1,0 +1,50 @@
+body {
+    background-image: linear-gradient(to right, #ffffff, #ffffff); /*Color completo del body*/
+}
+
+
+/*==============> SECCION BARRA DE NAVEGACION <============== */
+
+.menu li a{
+    font-family: Arial, Helvetica, sans-serif; /* Fuente del menu*/
+    font-weight: 700; /*Grosor de la fuente*/
+}
+.menu ul {
+  display: flex; /*Herramienta que permite organizar elementos ed forma flexible en una columna,
+  los elementos de <li> se colocan uno al lado del otro.*/
+  list-style-type: none; /*Elimina los puntos o viñetas que aparecen por defecto en una lista <ul>*/
+  padding: 0; /*Quita el relleno y los margenes predertermiandos que los navegadores aplican a las listas.*/
+  margin: 0;
+  white-space: nowrap; /* Evita que el texto de los enlaces se divida en varias lineas*/
+}
+
+.menu li {
+  flex-shrink: 0; /* Evita que los elementos del a lista se encojan si el espacio es limitado*/
+  display: inline-block; /* compatibilidad con navegadores antiguos */
+}
+
+.menu a {
+  text-decoration: none; /* Quita el subrayado de los enlaces <a>*/
+  color: #333; /*Color del text*/
+  padding: 10px 25px; /*Espacio interno alrededor de cada enlace.*/
+}
+
+.menu a:hover{
+    background-color: #8600af; /* Cambia el color del fondo*/
+    color: #e7e7e7; /*Color del texto cuando pases el mouse*/
+    border-radius: 5px; /* redondea las esquinas*/
+    transition: background-color 0.3s ease; /* Suaviza la transicion del color*/
+}
+
+
+.contenedor{
+    width: 90%;
+    max-width: 1200px; /*Establece el ancho maximo del contenedor*/
+    margin: 0 auto; /*Define el ancho en un %, permite que el contenedor se adapte a 
+                    pantallas pequeñas*/
+    padding: 20px; /*Espacio interno alrededor de los enlaces.*/
+}
+
+
+
+

@@ -1,58 +1,61 @@
-.ofertas{
-  display: flex; /*Alinea las ofertas mediante un flexbox*/
-  justify-content: left; /*justifica la imagen dandole un lugar*/
-  align-items: center;
+/* Estilos para el contenedor de todas las ofertas */
+.ofertas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Separa las tarjetas */
+  flex-wrap: wrap; /* Permite que los elementos se muevan a una nueva fila */
 }
 
-.Oferta.Monitor{
-  position: relative; /*posiciona el contenido por encima de la imag*/
-  display: block; /*hace que el enlace use todo el espacio de la tarjeta*/
-  overflow: hidden;
-  border-radius: 10px;
+/* Estilos para cada tarjeta de oferta individual */
+.oferta {
+  width: 18rem; /* Ancho de la tarjeta. Puedes ajustarlo si quieres */
   text-decoration: none;
-  color: #ffffff;
-  max-width: 400px;
-  margin: 20px
+  color: inherit; /* Hereda el color del texto del body */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Para el efecto de elevación al pasar el mouse */
 }
 
-.Oferta.Monitor img{
+.oferta:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+}
+
+/* Estilos para la imagen de la tarjeta */
+.oferta img {
   width: 100%;
   height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   display: block;
-  transition: transform 0.3s ease;
 }
 
-.Oferta.Monitor:hover img{
-  transform: scale(1.05);
+/* Estilos para el cuerpo de la tarjeta */
+.card-body {
+  padding: 1.25rem; /* Espacio interno del cuerpo de la tarjeta */
 }
 
-.carta-de-contenido {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgb(0,0,0,0.7);
+/* Estilos para el título */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.carta-de-contenido h2{
-  margin: 0;
-  font-size: 1.8em;
-  font-weight: 700;
-}
-
-.valor{
+/* Estilos para el contenedor del precio */
+.valor {
   display: flex;
   align-items: center;
   gap: 5px;
   background-color: #6a0dad;
   padding: 5px 10px;
   border-radius: 5px;
+  color: #fff; /* Asegura que el texto del precio sea blanco */
+  width: fit-content; /* El fondo se ajusta al tamaño del texto */
 }
 
-.valor p{
-  margin:0;
-  font-size: 1.2em;
+.valor p {
+  margin: 0;
+  font-size: 1em;
   font-weight: bold;
-  
 }

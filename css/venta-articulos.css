@@ -1,0 +1,54 @@
+.galeria {
+    display: flex;
+    gap: 10px;
+    /* Los estilos para moverla levemente hacia la izquierda */
+    transform: translateX(-400px); /* Ajusta el valor para moverlo más o menos */
+}
+
+.principal img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Agrega esto para la transición suave */
+    transition: transform 0.3s ease;
+}
+
+.principal img:hover {
+    /* Agrega esto para el efecto de zoom */
+    transform: scale(1.1); /* 1.1 significa 10% de zoom */
+}
+
+
+.secundarias {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.secundarias img {
+    width: 150px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Agrega esto para la transición suave */
+    transition: transform 0.3s ease;
+}
+
+body.galeria-ventas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+.secundarias img:hover {
+    /* Agrega esto para el efecto de zoom */
+    transform: scale(1.1); /* 1.1 significa 10% de zoom */
+}
+
+
+

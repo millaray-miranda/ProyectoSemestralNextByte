@@ -3,7 +3,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #8336ffe3, #7631e6, #2c2c4d);
+    background: white;
     min-height: 100vh; /* para cubrir toda la pantalla */
 }
 
@@ -48,13 +48,13 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     padding: 10px 25px;
 }
 
 .menu a:hover {
     background-color: #8600af;
-    color: #e7e7e7;
+    color: #000000;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -74,7 +74,7 @@ body {
     position: fixed;         /* siempre fijo arriba */
     top: 0;
     left: 0;
-    background: transparent; /* ponle color si quieres que no se confunda con el fondo */
+    background: transparent;
     z-index: 1000;           /* se queda por encima del contenido */
     padding: 10px 0;
 }

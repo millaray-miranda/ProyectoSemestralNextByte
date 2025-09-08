@@ -1,0 +1,186 @@
+/* Estilos generales para el body y el main */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.carrito-main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #520055;
+}
+
+/* Estilos para los items del carrito */
+.producto-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.producto-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.producto-info {
+    flex-grow: 1;
+}
+
+.producto-info h3 {
+    margin: 0 0 5px;
+}
+
+.producto-info p {
+    margin: 0;
+    color: #888;
+}
+
+.cantidad-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cantidad-controls input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.cantidad-controls button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.eliminar-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Estilos para el resumen de compra */
+.resumen-compra {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.resumen-linea.total {
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+#btnPagar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #520055;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#btnPagar:hover {
+    background-color: #6a006a;
+}
+
+#btnAgregar {
+    background-color: #520055;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-right: 10px; /* Separamos los dos botones */
+}
+
+#btnAgregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#btnAgregar:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el campo de descuento */
+.codigo-descuento {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.codigo-descuento input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#aplicar-descuento {
+    background-color: #520055;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de Vaciar Carrito */
+#btnVaciar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #e74c3c; /* Rojo para un estilo más de "alerta" */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+}

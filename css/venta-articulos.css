@@ -1,53 +1,177 @@
-.galeria {
-    display: flex;
-    gap: 10px;
-    /* Los estilos para moverla levemente hacia la izquierda */
-    transform: translateX(-400px); /* Ajusta el valor para moverlo más o menos */
-}
 
-.principal img {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    /* Agrega esto para la transición suave */
-    transition: transform 0.3s ease;
-}
-
-.principal img:hover {
-    /* Agrega esto para el efecto de zoom */
-    transform: scale(1.1); /* 1.1 significa 10% de zoom */
-}
-
-
-.secundarias {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.secundarias img {
-    width: 150px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    /* Agrega esto para la transición suave */
-    transition: transform 0.3s ease;
+html, body {
+    background: none;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 body.galeria-ventas {
+    background-color: #ffffff; /* Color púrpura de la imagen de referencia */
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    flex-direction: column;
+}
+
+.main-content {
+    display: grid;
+    grid-template-areas:
+        "galeria detalles"
+        "galeria ."; /* El punto es para dejar un espacio vacío debajo de los detalles */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    flex-grow: 1;
+}
+
+.galeria {
+    grid-area: galeria;
+    display: flex;
+    gap: 9px;
+    background-color: transparent;
+    border: 6px solid rgba(145, 145, 145, 0.212);
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{
+    position: relative;
+}
+
+.principal img {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease; 
+}
+
+.principal img:hover {
+    transform: scale(1.05); 
+}
+
+.secundarias {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que bajen a otra línea si no entran */
+    gap: 10px;
+    border: 2px solid rgb(255, 255, 255);
 }
 
 
+.secundarias img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
 .secundarias img:hover {
-    /* Agrega esto para el efecto de zoom */
-    transform: scale(1.1); /* 1.1 significa 10% de zoom */
+    transform: scale(0.9);
+}
+
+/* --- Nuevos estilos para los recuadros de texto --- */
+.detalles-producto {
+    grid-area: detalles;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: tran;
+}
+
+.nombre-producto {
+    background-color: transparent;
+    border: 2px transparent rgb(0, 0, 0);
+    height: 48px; /* Altura de ejemplo */
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.descripcion {
+    background-color: rgb(255, 255, 255);
+    height: 230px;
+    border: 6px solid rgba(255, 255, 255, 0.212); /* grosor, estilo y color */
+}
+
+
+.valor {
+    background-color: white;
+    border: none; /* sin borde */
+    height: 30px;
+    width: 120px;
+    position: relative;
+    left: 1px;
+}
+
+.valor p{
+    color: black;
+    text-align: center;
+    margin: 0; /* para centrarlo bien */
+    line-height: 30px; /* lo alinea verticalmente */
+}
+
+.oferta-tag {
+    position: absolute;
+    top: 20px; /* Distancia desde el borde superior */
+    right: 20px; /* Distancia desde el borde derecho */
+    left: auto; 
+    background-color: #520055;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 1em;
+    transform: rotate(8deg); /* Cambié la rotación a 8 grados para que el lado largo esté paralelo al borde */
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+footer {
+    background-color: #f0f0f0; /* Un gris claro */
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    color: #333; /* Un gris oscuro para el texto */
+}
+
+.botton-comprar button {
+    /* La mayoría de las propiedades se mantienen igual para el estilo */
+    background-color: #520055;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    border: none; /* Quitamos el borde por defecto de los botones */
+    cursor: pointer; /* Cambiamos el cursor para indicar que es un botón */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Añadimos una transición para efectos de hover */
+}
+
+.botton-comprar button:hover {
+    transform: translateY(-2px); /* Un pequeño desplazamiento hacia arriba */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); /* La sombra se hace más pronunciada */
+}
+
+.botton-comprar button:active {
+    transform: translateY(0); /* El botón vuelve a su posición original */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* La sombra vuelve a su estado inicial */
 }
 
 

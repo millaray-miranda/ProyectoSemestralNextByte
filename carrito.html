@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito de Compras</title>
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/menu.css"> 
+</head>
+<body>
+    <header>
+        <h1>Mi Carrito de Compras</h1>
+    </header>
+
+    <main class="carrito-main-content">
+        <div id="lista-productos">
+            <p id="carrito-vacio">El carrito está vacío.</p>
+        </div>
+
+        <div class="resumen-compra">
+            <h2>Resumen del Pedido</h2>
+            <div class="resumen-linea">
+                <span>Subtotal:</span>
+                <span id="subtotal-valor">$0</span>
+            </div>
+            <div class="resumen-linea">
+                <span>Envío:</span>
+                <span id="envio-valor">$5.000</span>
+            </div>
+
+            <div class="resumen-linea">
+                <span>Descuento:</span>
+                <span id="descuento-valor">$0</span>
+            </div>
+            <div class="codigo-descuento">
+                <input type="text" id="codigo-descuento" placeholder="Código de descuento">
+                <button id="aplicar-descuento">Aplicar</button>
+            </div>
+
+            <div class="resumen-linea total">
+                <span>Total:</span>
+                <span id="total-valor">$5.000</span>
+            </div>
+            
+            <button id="btnPagar">Pagar</button>
+            <button id="btnVaciar" class="btn-secundario">Vaciar Carrito</button>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 NextByte. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/logica-carrito.js"></script>
+
+</body>
+</html>

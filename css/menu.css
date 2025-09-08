@@ -35,7 +35,11 @@ body {
     padding: 0;
     margin: 0;
     white-space: nowrap;
+    flex-wrap: wrap;         /* permite que los items se acomoden si no caben */
+    justify-content: center; /* centra horizontalmente */
+    
 }
+
 
 .menu li {
     flex-shrink: 0;
@@ -61,5 +65,17 @@ body {
     max-width: 1200px; /* Mantén el ancho máximo */
     margin: 0 auto;
     padding: 20px;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    position: fixed;         /* siempre fijo arriba */
+    top: 0;
+    left: 0;
+    background: transparent; /* ponle color si quieres que no se confunda con el fondo */
+    z-index: 1000;           /* se queda por encima del contenido */
+    padding: 10px 0;
 }
 

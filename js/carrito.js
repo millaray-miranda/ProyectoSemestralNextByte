@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para mostrar la vista previa del carrito
     function mostrarVistaPrevia() {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        listaProductosPrevia.innerHTML = '';
+        listaProductosPrevia.innerHTML = ''; // Limpiamos la lista anterior
         let total = 0;
 
         if (carrito.length === 0) {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         totalPrevia.textContent = `$${total.toLocaleString('es-CL')}`;
-        vistaPreviaCarrito.style.display = 'block';
+        vistaPreviaCarrito.style.display = 'block'; // Mostramos el contenedor
     }
 
     // Ocultar la vista previa del carrito
@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         vistaPreviaCarrito.style.display = 'none';
     }
 
-    // Manejador de eventos para el botón de vista previa del carrito
+    // Manejador de eventos para el botón del carrito
     if (btnCarritoVistaPrevia) {
         btnCarritoVistaPrevia.addEventListener('click', function(event) {
-            event.stopPropagation();
+            event.stopPropagation(); // Previene que el clic se propague al documento
             if (vistaPreviaCarrito.style.display === 'block') {
                 ocultarVistaPrevia();
             } else {
@@ -75,11 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const card = boton.closest('.card');
                 const nombreProducto = card.querySelector('.nombre-producto').textContent;
                 const precioTexto = card.querySelector('.precio-producto strong').textContent;
-                
-                // Ahora buscamos la imagen dentro del enlace <a> que está en la tarjeta
-                const imagenUrl = card.querySelector('a img').src;
+                const imagenUrl = card.querySelector('.card-img-top').src;
 
-                // Limpiamos el texto del precio para que sea un número válido
                 const precioNumerico = parseInt(precioTexto.replace('$', '').replace(/\./g, ''));
 
                 const producto = {

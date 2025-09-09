@@ -30,10 +30,19 @@
                 </nav>
 
                 <div class="header-actions">
-                    <button class="cart-btn">
+                    <button id="btnCarritoVistaPrevia" class="cart-btn">
                         🛒 Carrito (<span id="contador-carrito">0</span>)
-                        
                     </button>
+
+                    <div id="vista-previa-carrito" class="vista-previa-carrito">
+                        <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
+                        <ul id="lista-productos-previa">
+                        </ul>
+                        <div class="acciones-previa">
+                            <p>Total: <span id="total-previa">$0</span></p>
+                            <button id="btnVerCarritoCompleto">Ver Carrito</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

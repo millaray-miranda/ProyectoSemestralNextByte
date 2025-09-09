@@ -13,7 +13,8 @@
 
 
 </head>
-<body >
+
+<body>
 
     <header class="header">
         <div class="container">
@@ -29,11 +30,20 @@
                     <a href="#" class="nav-link">Contacto</a>
                 </nav>
 
-                 <div class="header-actions">
-                    <button class="cart-btn">
+                <div class="header-actions">
+                    <button id="btnCarritoVistaPrevia" class="cart-btn">
                         🛒 Carrito (<span id="contador-carrito">0</span>)
-                        
                     </button>
+
+                    <div id="vista-previa-carrito" class="vista-previa-carrito">
+                        <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
+                        <ul id="lista-productos-previa">
+                        </ul>
+                        <div class="acciones-previa">
+                            <p>Total: <span id="total-previa">$0</span></p>
+                            <button id="btnVerCarritoCompleto">Ver Carrito</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,7 +94,6 @@
             <div class="botton-comprar">
                 <button id="btnAgregar">AGREGAR AL CARRITO</button>
                 <button id="btnComprar">COMPRAR</button>
-                <script src="js/carrito.js"></script>
             </div>
         </div>
     </div>
@@ -118,8 +127,10 @@
             </div>
         </div>
     </footer>
+    <script src="js/carrito.js"></script>
+    <script src="js/logica-carrito.js"></script>
     <script src="js/intercambio-imagenes.js"></script>
-   
+
 
 
 </body>

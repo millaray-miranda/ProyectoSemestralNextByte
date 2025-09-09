@@ -12,9 +12,12 @@ body {
 }
 
 .logo-empresa {
-    width: 120px;          /* ancho */
-    display: block;         /* para que margin funcione normalmente */
-    margin: 20px 0 20px 10px; /* margen: arriba, derecha, abajo, izquierda */
+    width: 120px;
+    /* ancho */
+    display: block;
+    /* para que margin funcione normalmente */
+    margin: 20px 0 20px 10px;
+    /* margen: arriba, derecha, abajo, izquierda */
 }
 
 /* Contenedor principal del layout */
@@ -28,7 +31,7 @@ body {
 
 /* Contenedor del contenido principal */
 .main-content {
-    flex-grow: 1; 
+    flex-grow: 1;
     padding-left: 20px;
 }
 
@@ -45,9 +48,11 @@ body {
     padding: 0;
     margin: 0;
     white-space: nowrap;
-    flex-wrap: wrap;         /* permite que los items se acomoden si no caben */
-    justify-content: center; /* centra horizontalmente */
-    
+    flex-wrap: wrap;
+    /* permite que los items se acomoden si no caben */
+    justify-content: center;
+    /* centra horizontalmente */
+
 }
 
 
@@ -70,8 +75,9 @@ body {
 }
 
 .contenedor {
-   
-    max-width: 1200px; /* Mantén el ancho máximo */
+
+    max-width: 1200px;
+    /* Mantén el ancho máximo */
     margin: 0 auto;
     padding: 20px;
 }
@@ -79,12 +85,16 @@ body {
 .menu {
     width: 100%;
     display: flex;
-    justify-content: center; /* centra horizontalmente */
-    position: fixed;         /* siempre fijo arriba */
+    justify-content: center;
+    /* centra horizontalmente */
+    position: fixed;
+    /* siempre fijo arriba */
     top: 0;
     left: 0;
-    background: transparent; /* ponle color si quieres que no se confunda con el fondo */
-    z-index: 1000;           /* se queda por encima del contenido */
+    background: transparent;
+    /* ponle color si quieres que no se confunda con el fondo */
+    z-index: 1000;
+    /* se queda por encima del contenido */
     padding: 10px 0;
 }
 
@@ -190,7 +200,7 @@ body {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .company-header {
@@ -453,13 +463,13 @@ body {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .product-image {
@@ -626,14 +636,13 @@ body {
 
 /* Estilos para el contenedor de todas las ofertas */
 .ofertas {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px; /* Separa las tarjetas */
-  flex-wrap: wrap; /* Permite que los elementos se muevan a una nueva fila */
+  align-items: start;
 }
 
-/* Estilos para cada tarjeta de oferta individual */
 .oferta {
   width: 18rem; /* Ancho de la tarjeta. Puedes ajustarlo si quieres */
   text-decoration: none;
@@ -643,11 +652,8 @@ body {
   transition: transform 0.3s ease; /* Para el efecto de elevación al pasar el mouse */
 }
 
-.oferta:hover {
-  transform: translateY(-5px); /* Efecto de elevación */
-}
 
-/* Estilos para la imagen de la tarjeta */
+/* Estilos para cada tarjeta de oferta individual */
 .oferta img {
   width: 100%;
   height: auto;
@@ -656,34 +662,51 @@ body {
   display: block;
 }
 
+.oferta:hover {
+    transform: translateY(-5px);
+    /* Efecto de elevación */
+}
+
+/* Estilos para la imagen de la tarjeta */
+.oferta img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: block;
+}
+
 /* Estilos para el cuerpo de la tarjeta */
 .card-body {
-  padding: 1.25rem; /* Espacio interno del cuerpo de la tarjeta */
+    padding: 1.25rem;
+    /* Espacio interno del cuerpo de la tarjeta */
 }
 
 /* Estilos para el título */
 .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 /* Estilos para el contenedor del precio */
 .valor {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: #6a0dad;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: #fff; /* Asegura que el texto del precio sea blanco */
-  width: fit-content; /* El fondo se ajusta al tamaño del texto */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6a0dad;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    /* Asegura que el texto del precio sea blanco */
+    width: fit-content;
+    /* El fondo se ajusta al tamaño del texto */
 }
 
 .valor p {
-  margin: 0;
-  font-size: 1em;
-  font-weight: bold;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -814,20 +837,21 @@ body {
 }
 
 .btnAgregarItem {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background-color: #6a0dad;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: #fff;
-  width: fit-content;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #6a0dad;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
 }
 
 .btnAgregarItem:hover {
-  background-color: #58009c; /* Un color un poco más oscuro para el efecto hover */
+    background-color: #58009c;
+    /* Un color un poco más oscuro para el efecto hover */
 }

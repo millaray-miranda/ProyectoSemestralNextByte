@@ -185,3 +185,35 @@ h1, h2 {
     margin-top: 10px;
 }
 
+.vista-previa-carrito {
+    display: none; /* Oculta el contenedor por defecto */
+    position: absolute;
+    right: 0; /* Lo alinea a la derecha del contenedor padre */
+    top: 60px; /* Ajusta la posición vertical, si es necesario */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    width: 300px; /* Ancho de la ventana de previsualización */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-previa-carrito ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vista-previa-carrito li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.acciones-previa {
+    text-align: right;
+    margin-top: 10px;
+}
+

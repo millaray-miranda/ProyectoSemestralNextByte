@@ -812,3 +812,22 @@ body {
         padding: 20px 15px 15px;
     }
 }
+
+.btnAgregarItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #6a0dad;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.btnAgregarItem:hover {
+  background-color: #58009c; /* Un color un poco más oscuro para el efecto hover */
+}

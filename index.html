@@ -29,10 +29,17 @@
                 </nav>
 
                 <div class="header-actions">
-                    <button class="cart-btn">
+                    <button id="btnCarritoVistaPrevia" class="cart-btn">
                         🛒 Carrito (<span id="contador-carrito">0</span>)
-                        
                     </button>
+                    <div id="vista-previa-carrito" class="vista-previa-carrito">
+                        <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
+                        <ul id="lista-productos-previa"></ul>
+                        <div class="acciones-previa">
+                            <p>Total: <span id="total-previa">$0</span></p>
+                            <button id="btnVerCarritoCompleto">Pagar</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,41 +52,45 @@
             <a class="user-link">Registrarse</a>
         </div>
     </div>
-
-    <section>
-        <div class="ofertas">
-            <a href="monitor.html" class="oferta card">
-                <img src="imagenes/monitor/frontal-monitor.jpg" class="card-img-top" alt="Monitor Gamer">
-                <div class="card-body">
-                    <h5 class="card-title">Monitor Xiaomi G34WQi</h5>
-                    <div class="valor">
-                        <span>desde:</span>
-                        <p><strong>$194.990</strong></p>
-                    </div>
+<section>
+    <div class="ofertas">
+        <div class="oferta card">
+            <img src="imagenes/monitor/frontal-monitor.jpg" class="card-img-top" alt="Monitor Gamer">
+            <div class="card-body">
+                <h5 class="card-title nombre-producto">Monitor Xiaomi G34WQi</h5>
+                <div class="valor">
+                    <span>desde:</span>
+                    <p class="precio-producto"><strong>$194.990</strong></p>
                 </div>
-            </a>
-            <a href="teclado.html" class="oferta card">
-                <img src="imagenes/teclado-ajazz.jpg" class="card-img-top" alt="Teclado mecánico">
-                <div class="card-body">
-                    <h5 class="card-title">ATTACK SHARK Ajazz AK820 Pro</h5>
-                    <div class="valor">
-                        <span>desde:</span>
-                        <p><strong>$99.990</strong></p>
-                    </div>
-                </div>
-            </a>
-            <a href="mouse.html " class="oferta card">
-                <img src="imagenes/mouse-logitechg502x.webp" class="card-img-top" alt="Mouse Gamer">
-                <div class="card-body">
-                    <h5 class="card-title">Logitech G502 Hero</h5>
-                    <div class="valor">
-                        <span>desde:</span>
-                        <p><strong>$70.000</strong></p>
-                    </div>
-                </div>
-            </a>
+                <button class="btnAgregarItem" data-id="1">Agregar al carrito</button>
+            </div>
         </div>
-    </section>
+        
+        <div class="oferta card">
+            <img src="imagenes/teclado-ajazz.jpg" class="card-img-top" alt="Teclado mecánico">
+            <div class="card-body">
+                <h5 class="card-title nombre-producto">ATTACK SHARK Ajazz AK820 Pro</h5>
+                <div class="valor">
+                    <span>desde:</span>
+                    <p class="precio-producto"><strong>$99.990</strong></p>
+                </div>
+                <button class="btnAgregarItem" data-id="2">Agregar al carrito</button>
+            </div>
+        </div>
+        
+        <div class="oferta card">
+            <img src="imagenes/mouse-logitechg502x.webp" class="card-img-top" alt="Mouse Gamer">
+            <div class="card-body">
+                <h5 class="card-title nombre-producto">Logitech G502 Hero</h5>
+                <div class="valor">
+                    <span>desde:</span>
+                    <p class="precio-producto"><strong>$70.000</strong></p>
+                </div>
+                <button class="btnAgregarItem" data-id="3">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
 
     <footer class="footer">
         <div class="container">

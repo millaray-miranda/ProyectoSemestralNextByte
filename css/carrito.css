@@ -185,3 +185,14 @@ h1, h2 {
     margin-top: 10px;
 }
 
+.vista-previa-carrito {
+    display: none; /* Oculta el contenedor por defecto */
+    position: absolute;
+    right: 0;
+    top: 60px; /* Ajusta la posición según tu diseño */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+}
+

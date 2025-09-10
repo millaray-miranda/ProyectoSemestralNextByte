@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="top">
+        <div class="nav">
+            <h1 class="nav-title" onclick="cambiar_texto(this)">Administrador   </h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" onclick= bienvenido()>Envios    </a></li>
+                <li><a href="#">Find Connections</a></li>
+                <li><button class="btn" onclick="eliminar(this)">Salir</button></li>
+            </ul>
+        </div>  
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-2">
+                <div class="user-card">
+                    <div class="card-header">
+                        <img src="imagenes/admin/manager.jpg"
+                        alt="manager_img" class="avatar-m"
+                        onmouseover="cambia_imagen(this)"
+                        onmouseout="regresa_imagen(this)">
+                    </div>
+                    <div class="card-body">
+                        <h1 id="nombre">Administrador</h1>
+                        <h3>
+                            <img src="imagenes/admin/map-marker.png" alt="pin" class="icon-s"> 
+                            Sucursal de Vitacura, Chile
+                        </h3>
+                        <p class="descripcion">
+                            Soy el encargado de reponer, gestionar y actualizar el inventario.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="header">
+                        Más sobre nosotros.
+                    </div>
+                    <div class="card-body">
+                        <h4>-Marca numero uno en el mercado <br>-Precios accesibles para la comunidad <br>-Envio rapido en todo Chile</h4   >
+                        <p class="dates">Mar 2025 - Atualidad.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- right column -->
+            <div class="col">
+                <div class="card">
+                    <div class="header">
+                        <span class="connections">2</span>
+                        Calificación a comprador
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/walterWhitee.jpeg" alt="todd" class="avatar-s">
+                            <span>Walter W.</span>
+                        </span>
+                        <span class="end">
+                            <img src="imagenes/admin/accept-circle.png" alt="accept" class="avatar-s">
+                            <img src="imagenes/admin/close-circle.png" alt="decline" class="avatar-s">
+                        </span>
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/saulGoodman.jpeg" alt="phil" class="avatar-s">
+                            <span>Saul G.</span>
+                        </span>
+                        <span class="end">
+                            <img src="imagenes/admin/accept-circle.png" alt="accept" class="avatar-s">
+                            <img src="imagenes/admin/close-circle.png" alt="decline" class="avatar-s">
+                        </span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">
+                        <span class="connections">500+</span>
+                        Historial de ventas
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/mykeRoss.jpeg" alt="Myke" class="avatar-s">
+                            <span>Myke R.</span>
+                        </span>
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/tonyStark.jpeg" alt="Tony" class="avatar-s">
+                            <span>Tony S.</span>
+                        </span>
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/clarkKent.jpeg" alt="Clark" class="avatar-s">
+                            <span>Clark K.</span>
+                        </span>
+                    </div>
+                    <div class="user-line">
+                        <span class="start">
+                            <img src="imagenes/admin/peterParker.jpeg" alt="Peter" class="avatar-s">
+                            <span>Peter P.</span>
+                        </span>
+                    </div>
+                    <div class="footer">
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <input type="text" id="buscador" placeholder="Buscar. . .">
+        <button onclick="busqueda()">Buscar</button>
+        <button onclick="cambiar_modo()">Dark Mode</button>
+
+    </div>
+    <script src="js/admin.js"></script>
+</body>
+</html>

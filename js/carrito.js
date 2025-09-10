@@ -7,11 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPrevia = document.getElementById('total-previa');
     const carritoVacioTexto = document.getElementById('carrito-vacio-texto');
 
-    // Selectores para los botones de la página de detalle
-    const btnAgregar = document.getElementById('btnAgregar');
-    const btnComprar = document.getElementById('btnComprar');
+    // Selectores para los botones de agregar productos
+    const botonesAgregar = document.querySelectorAll('.btn-agregar-estilo');
 
-    // Función para actualizar el contador del carrito
+    // Función para actualizar el contador
     function actualizarContador() {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const totalItems = carrito.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
@@ -45,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
         vistaPreviaCarrito.style.display = 'block'; // Mostramos el contenedor
     }
 
-    // Función para ocultar la vista previa del carrito
+    // Ocultar la vista previa del carrito
     function ocultarVistaPrevia() {
         vistaPreviaCarrito.style.display = 'none';
     }
 
-    // Manejador de eventos para el botón de vista previa del carrito
+    // Manejador de eventos para el botón del carrito
     if (btnCarritoVistaPrevia) {
         btnCarritoVistaPrevia.addEventListener('click', function(event) {
             event.stopPropagation(); // Previene que el clic se propague al documento
@@ -69,36 +68,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Manejador de evento para el botón "Agregar al carrito"
-    if (btnAgregar) {
-        btnAgregar.addEventListener('click', function() {
-            // Obtener la información del producto
-            const nombreProducto = document.querySelector('.nombre-producto h2').textContent;
-            const precioTexto = document.querySelector('.valor p').textContent;
-            const imagenUrl = document.querySelector('.principal img').src;
+    // Manejador de evento para los botones "Agregar al carrito"
+    if (botonesAgregar.length > 0) {
+        botonesAgregar.forEach(boton => {
+            boton.addEventListener('click', function() {
+                const card = boton.closest('.card');
+                const nombreProducto = card.querySelector('.nombre-producto').textContent;
+                const precioTexto = card.querySelector('.precio-producto strong').textContent;
+                const imagenUrl = card.querySelector('.card-img-top').src;
 
-            const precioNumerico = parseInt(precioTexto.replace('$', '').replace(/\./g, ''));
+                const precioNumerico = parseInt(precioTexto.replace('$', '').replace(/\./g, ''));
 
-            const producto = {
-                nombre: nombreProducto,
-                precio: precioNumerico,
-                imagen: imagenUrl,
-                cantidad: 1
-            };
+                const producto = {
+                    nombre: nombreProducto,
+                    precio: precioNumerico,
+                    imagen: imagenUrl,
+                    cantidad: 1
+                };
 
-            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            const productoExistente = carrito.find(item => item.nombre === producto.nombre);
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                const productoExistente = carrito.find(item => item.nombre === producto.nombre);
 
-            if (productoExistente) {
-                productoExistente.cantidad++;
-            } else {
-                carrito.push(producto);
-            }
+                if (productoExistente) {
+                    productoExistente.cantidad++;
+                } else {
+                    carrito.push(producto);
+                }
 
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert('Producto agregado al carrito!');
-            
-            actualizarContador();
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                alert('Producto agregado al carrito!');
+                actualizarContador();
+            });
         });
     }
 
@@ -106,13 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnVerCarritoCompleto = document.getElementById('btnVerCarritoCompleto');
     if (btnVerCarritoCompleto) {
         btnVerCarritoCompleto.addEventListener('click', function() {
-            window.open('carrito.html', '_blank');
-        });
-    }
-
-    // Manejador de evento para el botón "Comprar"
-    if (btnComprar) {
-        btnComprar.addEventListener('click', function() {
             window.open('carrito.html', '_blank');
         });
     }

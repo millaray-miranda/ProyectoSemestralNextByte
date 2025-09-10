@@ -186,16 +186,16 @@ h1, h2 {
 }
 
 .vista-previa-carrito {
-    display: none; /* Oculta por defecto */
+    display: none; /* Oculta el contenedor por defecto */
     position: absolute;
-    top: 100%; /* Coloca la vista previa justo debajo del botón del carrito */
-    right: 0;
-    width: 300px; /* Ancho de la ventana */
+    right: 0; /* Lo alinea a la derecha del contenedor padre */
+    top: 60px; /* Ajusta la posición vertical, si es necesario */
     background-color: white;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100; /* Asegura que la vista previa esté sobre el resto del contenido */
     padding: 10px;
+    z-index: 1000;
+    width: 300px; /* Ancho de la ventana de previsualización */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .vista-previa-carrito ul {
@@ -215,9 +215,5 @@ h1, h2 {
 .acciones-previa {
     text-align: right;
     margin-top: 10px;
-}
-
-.cart-container {
-    position: relative; /* Muy importante para que la vista previa se posicione dentro de este contenedor */
 }
 

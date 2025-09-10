@@ -16,6 +16,28 @@
 
 <body>
 
+        <div id="login-form-container" class="form-container">
+        <form id="login-form" class="form-card">
+            <h3>Iniciar sesión</h3>
+            <input type="text" id="login-username" placeholder="Usuario" required>
+            <input type="password" id="login-password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+            <p class="form-switch">¿No tienes cuenta? <a href="#" id="show-register-link">Regístrate</a></p>
+        </form>
+    </div>
+
+    <div id="register-form-container" class="form-container">
+        <form id="register-form" class="form-card">
+            <h3>Registrarse</h3>
+            <input type="text" id="register-username" placeholder="Usuario" required>
+            <input type="email" id="register-email" placeholder="Correo electrónico" required>
+            <input type="password" id="register-password" placeholder="Contraseña" required>
+            <input type="password" id="register-confirm-password" placeholder="Confirmar contraseña" required>
+            <button type="submit">Crear cuenta</button>
+            <p class="form-switch">¿Ya tienes cuenta? <a href="#" id="show-login-link">Inicia sesión</a></p>
+        </form>
+    </div>
+
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -30,18 +52,27 @@
                     <a href="#" class="nav-link">Contacto</a>
                 </nav>
 
-                <div class="header-actions">
-                    <button id="btnCarritoVistaPrevia" class="cart-btn">
-                        🛒 Carrito (<span id="contador-carrito">0</span>)
-                    </button>
 
-                    <div id="vista-previa-carrito" class="vista-previa-carrito">
-                        <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
-                        <ul id="lista-productos-previa">
-                        </ul>
-                        <div class="acciones-previa">
-                            <p>Total: <span id="total-previa">$0</span></p>
-                            <button id="btnVerCarritoCompleto">Ver Carrito</button>
+
+                <div class="header-actions">
+                    <div class="cart-container">
+                        <button id="btnCarritoVistaPrevia" class="cart-btn">
+                            🛒 Carrito (<span id="contador-carrito">0</span>)
+                        </button>
+                        <div id="vista-previa-carrito" class="vista-previa-carrito">
+                            <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
+                            <ul id="lista-productos-previa"></ul>
+                            <div class="acciones-previa">
+                                <p>Total: <span id="total-previa">$0</span></p>
+                                <button id="btnVerCarritoCompleto">Ver Carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <div class="container">
+                            <a class="user-link" onclick="showLogin()">Iniciar sesión</a>
+                            <span>|</span>
+                            <a class="user-link" onclick="showRegister()">Registrarse</a>
                         </div>
                     </div>
                 </div>

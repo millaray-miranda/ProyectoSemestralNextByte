@@ -106,7 +106,7 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-    background: linear-gradient(90deg, #ffffff, #6a1b9a);
+    background: linear-gradient(90deg, #81f3ef, #489ae1);
     color: white;
     padding: 0px 0;
     height: 100px;
@@ -522,6 +522,7 @@ body {
 .placeholder-product::after {
     transform: rotate(-45deg);
 }
+
 
 .placeholder-product span {
     background-color: #f8f9fa;

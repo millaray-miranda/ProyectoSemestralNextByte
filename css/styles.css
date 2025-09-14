@@ -4,23 +4,27 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .logo-empresa {
     width: 120px;
-    /* ancho */
     display: block;
-    /* para que margin funcione normalmente */
     margin: -75px 0 20px 1px;
-    /* margen: arriba, derecha, abajo, izquierda */
 }
 
-/* Contenedor principal del layout */
 .page-wrapper {
     display: flex;
     justify-content: flex-start;
@@ -29,13 +33,11 @@ body {
     flex-direction: row;
 }
 
-/* Contenedor del contenido principal */
 .main-content {
-    flex-grow: 1;
+    flex: 1 0 auto;
     padding-left: 20px;
+    padding: 40px 0;
 }
-
-/*==============> SECCION BARRA DE NAVEGACION <============== */
 
 .menu li a {
     font-family: Arial, Helvetica, sans-serif;
@@ -49,12 +51,8 @@ body {
     margin: 0;
     white-space: nowrap;
     flex-wrap: wrap;
-    /* permite que los items se acomoden si no caben */
     justify-content: center;
-    /* centra horizontalmente */
-
 }
-
 
 .menu li {
     flex-shrink: 0;
@@ -75,9 +73,7 @@ body {
 }
 
 .contenedor {
-
     max-width: 1200px;
-    /* Mantén el ancho máximo */
     margin: 0 auto;
     padding: 20px;
 }
@@ -86,15 +82,11 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* centra horizontalmente */
     position: fixed;
-    /* siempre fijo arriba */
     top: 0;
     left: 0;
     background: transparent;
-    /* ponle color si quieres que no se confunda con el fondo */
     z-index: 1000;
-    /* se queda por encima del contenido */
     padding: 10px 0;
 }
 
@@ -104,7 +96,6 @@ body {
     padding: 0 20px;
 }
 
-/* ===== HEADER ===== */
 .header {
     background: linear-gradient(90deg, #81f3ef, #489ae1);
     color: white;
@@ -147,7 +138,7 @@ body {
     position: relative;
     font-weight: 500;
     transition: color 0.3s ease;
-  padding: 1px 1px 89px 15px;
+    padding: 1px 1px 89px 15px;
 }
 
 .nav-link:hover {
@@ -184,7 +175,6 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== USER ACTIONS ===== */
 .user-actions {
     background-color: white;
     padding: 8px 0;
@@ -204,7 +194,6 @@ body {
     text-decoration: underline;
 }
 
-/* ===== AUTH SECTIONS ===== */
 .auth-section {
     display: none;
     padding: 40px 0;
@@ -312,31 +301,23 @@ body {
     text-transform: uppercase;
 }
 
-.form-input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 2px solid #ccc;
-    font-size: 0.9em;
-    transition: border-color 0.3s ease;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
+.form-input,
 .form-select {
     width: 100%;
     padding: 8px 12px;
     border: 2px solid #ccc;
     font-size: 0.9em;
-    background-color: white;
     transition: border-color 0.3s ease;
 }
 
+.form-input:focus,
 .form-select:focus {
     outline: none;
     border-color: #007bff;
+}
+
+.form-select {
+    background-color: white;
 }
 
 .form-actions {
@@ -379,12 +360,6 @@ body {
     background-color: #f8f9fa;
 }
 
-/* ===== MAIN CONTENT ===== */
-.main-content {
-    padding: 40px 0;
-}
-
-/* ===== HERO SECTION ===== */
 .hero-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -430,19 +405,31 @@ body {
     justify-content: center;
 }
 
-.placeholder-image {
+.placeholder-image,
+.placeholder-product {
     width: 100%;
-    height: 300px;
     border: 2px solid #333;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
     position: relative;
 }
 
+.placeholder-image {
+    height: 300px;
+    background-color: white;
+}
+
+.placeholder-product {
+    height: 150px;
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+}
+
 .placeholder-image::before,
-.placeholder-image::after {
+.placeholder-image::after,
+.placeholder-product::before,
+.placeholder-product::after {
     content: '';
     position: absolute;
     background-color: #333;
@@ -450,22 +437,33 @@ body {
     width: 100%;
 }
 
-.placeholder-image::before {
+.placeholder-image::before,
+.placeholder-product::before {
     transform: rotate(45deg);
 }
 
-.placeholder-image::after {
+.placeholder-image::after,
+.placeholder-product::after {
     transform: rotate(-45deg);
+}
+
+.placeholder-image span,
+.placeholder-product span {
+    padding: 8px;
+    z-index: 1;
+    position: relative;
+    font-size: 0.9em;
 }
 
 .placeholder-image span {
     background-color: white;
     padding: 10px;
-    z-index: 1;
-    position: relative;
 }
 
-/* ===== PRODUCTS SECTION ===== */
+.placeholder-product span {
+    background-color: #f8f9fa;
+}
+
 .products-section {
     margin-bottom: 60px;
 }
@@ -494,44 +492,6 @@ body {
     margin-bottom: 15px;
 }
 
-.placeholder-product {
-    width: 100%;
-    height: 150px;
-    border: 2px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.placeholder-product::before,
-.placeholder-product::after {
-    content: '';
-    position: absolute;
-    background-color: #333;
-    height: 2px;
-    width: 100%;
-}
-
-.placeholder-product::before {
-    transform: rotate(45deg);
-}
-
-.placeholder-product::after {
-    transform: rotate(-45deg);
-}
-
-
-.placeholder-product span {
-    background-color: #f8f9fa;
-    padding: 8px;
-    z-index: 1;
-    position: relative;
-    font-size: 0.9em;
-}
-
 .product-title {
     color: #007bff;
     font-size: 1.1em;
@@ -555,10 +515,10 @@ body {
     color: #333;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     background: linear-gradient(90deg, #2c003e, #4a148c);
     color: #ddd;
+    flex-shrink: 0;
     padding: 40px 0;
 }
 
@@ -659,7 +619,6 @@ body {
     background: #fdd835;
 }
 
-/* Estilos para el contenedor de todas las ofertas */
 .ofertas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -670,32 +629,17 @@ body {
 
 .oferta {
     width: 18rem;
-    /* Ancho de la tarjeta. Puedes ajustarlo si quieres */
     text-decoration: none;
     color: inherit;
-    /* Hereda el color del texto del body */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    /* Para el efecto de elevación al pasar el mouse */
-}
-
-
-/* Estilos para cada tarjeta de oferta individual */
-.oferta img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    display: block;
 }
 
 .oferta:hover {
     transform: translateY(-5px);
-    /* Efecto de elevación */
 }
 
-/* Estilos para la imagen de la tarjeta */
 .oferta img {
     width: 100%;
     height: auto;
@@ -704,20 +648,16 @@ body {
     display: block;
 }
 
-/* Estilos para el cuerpo de la tarjeta */
 .card-body {
     padding: 1.25rem;
-    /* Espacio interno del cuerpo de la tarjeta */
 }
 
-/* Estilos para el título */
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-/* Estilos para el contenedor del precio */
 .valor {
     display: flex;
     align-items: center;
@@ -726,142 +666,13 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     color: #fff;
-    /* Asegura que el texto del precio sea blanco */
     width: fit-content;
-    /* El fondo se ajusta al tamaño del texto */
 }
 
 .valor p {
     margin: 0;
     font-size: 1em;
     font-weight: bold;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .main-nav {
-        order: 2;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-section {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .hero-content h1 {
-        font-size: 2em;
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-right {
-        text-align: center;
-    }
-
-    .newsletter-signup {
-        margin: 0 auto;
-    }
-
-    .user-actions {
-        text-align: center;
-    }
-
-    /* Auth forms responsive */
-    .auth-container {
-        margin: 0 20px;
-        max-width: none;
-    }
-
-    .auth-form {
-        padding: 20px;
-    }
-
-    .form-header {
-        margin: -20px -20px 20px -20px;
-        padding: 10px 20px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .half-width {
-        margin-bottom: 20px;
-    }
-
-    .form-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        min-width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8em;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .newsletter-signup {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .email-input,
-    .subscribe-btn {
-        border-radius: 4px;
-    }
-
-    /* Auth forms mobile */
-    .auth-section {
-        padding: 20px 0;
-        min-height: auto;
-    }
-
-    .auth-container {
-        margin: 0 10px;
-    }
-
-    .auth-form {
-        padding: 15px;
-    }
-
-    .form-header {
-        margin: -15px -15px 15px -15px;
-        padding: 10px 15px;
-    }
-
-    .company-header {
-        padding: 20px 15px 15px;
-    }
 }
 
 .btnAgregarItem {
@@ -881,12 +692,10 @@ body {
 
 .btnAgregarItem:hover {
     background-color: #58009c;
-    /* Un color un poco más oscuro para el efecto hover */
 }
 
 .form-container {
     display: none;
-    /* Oculta los formularios por defecto */
     position: fixed;
     top: 0;
     left: 0;
@@ -934,3 +743,268 @@ body {
     margin-top: 15px;
     font-size: 14px;
 }
+
+.carousel-section {
+    padding: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.carousel-caption h5 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        order: 2;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .newsletter-signup {
+        margin: 0 auto;
+    }
+
+    .user-actions {
+        text-align: center;
+    }
+
+    .auth-container {
+        margin: 0 20px;
+        max-width: none;
+    }
+
+    .auth-form {
+        padding: 20px;
+    }
+
+    .form-header {
+        margin: -20px -20px 20px -20px;
+        padding: 10px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .half-width {
+        margin-bottom: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-width: 200px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-control {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-signup {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .email-input,
+    .subscribe-btn {
+        border-radius: 4px;
+    }
+
+    .auth-section {
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .auth-container {
+        margin: 0 10px;
+    }
+
+    .auth-form {
+        padding: 15px;
+    }
+
+    .form-header {
+        margin: -15px -15px 15px -15px;
+        padding: 10px 15px;
+    }
+
+    .company-header {
+        padding: 20px 15px 15px;
+    }
+
+    .carousel-item img {
+        height: 250px;
+    }
+
+    .carousel-caption {
+        padding: 10px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+

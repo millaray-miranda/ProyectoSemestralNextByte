@@ -102,6 +102,7 @@ body {
     padding: 0px 0;
     height: 100px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
 .header-content {
@@ -134,12 +135,10 @@ body {
 }
 
 .nav-link {
+    position: relative; /* para que el ::after se posicione respecto al enlace */
     color: white;
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 1px 1px 89px 15px;
-}
+    text-decoration: none;
+  }
 
 .nav-link:hover {
     color: #ffeb3b;
@@ -150,11 +149,11 @@ body {
     position: absolute;
     width: 0%;
     height: 2px;
-    left: 50%;
-    bottom: -5px;
-    background: #ffeb3b;
+    left: 0; /* para que empiece desde el inicio del texto */
+    bottom: -5px; /* a 5px debajo del texto */
+    background: #000000;
     transition: all 0.3s ease;
-}
+  }
 
 .nav-link:hover::after {
     width: 100%;

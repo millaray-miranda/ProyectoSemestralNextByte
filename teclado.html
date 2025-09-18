@@ -14,30 +14,38 @@
 
 </head>
 
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="imagenes/logo-removebg-preview.png" class="logo-empresa">
-                </div>
-                <nav class="main-nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="#" class="nav-link">Productos</a>
-                    <a href="#" class="nav-link">Nosotros</a>
-                    <a href="#" class="nav-link">Blogs</a>
-                    <a href="#" class="nav-link">Contacto</a>
-                </nav>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <img src="imagenes/logo-removebg-preview.png" class="logo-empresa">
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Productos</a>
+                <a href="#" class="nav-link">Nosotros</a>
+                <a href="#" class="nav-link">Blogs</a>
+                <a href="#" class="nav-link">Contacto</a>
+            </nav>
 
-                <div class="header-actions">
-                    <button class="cart-btn">
-                        🛒 Carrito (<span id="contador-carrito">0</span>)
-                        
-                    </button>
+            <div class="header-actions">
+                <button id="btnCarritoVistaPrevia" class="cart-btn">
+                    🛒 Carrito (<span id="contador-carrito">0</span>)
+                </button>
+
+                <div id="vista-previa-carrito" class="vista-previa-carrito">
+                    <p id="carrito-vacio-texto" style="display: none;">El carrito está vacío.</p>
+                    <ul id="lista-productos-previa">
+                    </ul>
+                    <div class="acciones-previa">
+                        <p>Total: <span id="total-previa">$0</span></p>
+                        <button id="btnVerCarritoCompleto">Ver Carrito</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- User Actions -->
     <div class="user-actions">
